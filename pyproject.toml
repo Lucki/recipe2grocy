@@ -1,0 +1,17 @@
+# https://packaging.python.org/en/latest/tutorials/packaging-projects/
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "recipe2grocy"
+version = "0.0.1"
+description = "Take standardised recipes and send them to grocy."
+readme = "README.md"
+dependencies = [
+    "pygrocy",
+    "recipe-scrapers",
+    "texttable",
+    "tomlkit"
+]

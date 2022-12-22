@@ -1,0 +1,127 @@
+grocy_url = "https://example.com"
+api_key = "asdasdasdasdasdasdasdasdasdasdasdasd"
+api_port = 443
+
+
+
+
+[default]
+default_unit = "piece"
+modifiers = [
+    "small",
+    "a bit",
+    "fresh",
+]
+
+[default.amounts]
+"½" = 0.5
+"¼" = 0.25
+"⅛" = 0.125
+
+[default.units]
+tsp.name = "tea spoon"
+
+tbsp.name = "tea spoon"
+tbsp.factor = 3
+
+ml.name = "liter"
+ml.factor = 0.001
+
+[default.products]
+apple.name = "apples"
+banana.name = "bananas"
+
+berries.unit = "package"
+berries.factor = 50
+
+[default.disambiguate]
+Tomatoes.Can = "Tomatoes"
+Tomatoes.Piece = "Fresh tomatoes"
+
+
+
+
+# ========== Example.com ============
+
+["example.com"]
+
+default_unit = "piece"
+
+modifiers = [
+    "small",
+    "a bit",
+    "fresh",
+]
+
+ignored_products = [
+    "Salt and Pepper",
+]
+
+["example.com".amounts]
+
+"½" = 0.5
+"¼" = 0.25
+"⅛" = 0.125
+
+["example.com".units]
+
+tsp.name = "tea spoon"
+
+tbsp.name = "tea spoon"
+tbsp.factor = 3
+
+ml.name = "liter"
+ml.factor = 0.001
+
+["example.com".products]
+
+apple.name = "apples"
+banana.name = "bananas"
+
+berries.unit = "package"
+berries.factor = 50
+
+["example.com".disambiguate]
+
+Tomatoes.Can = "Tomatoes"
+Tomatoes.Piece = "Fresh tomatoes"
+
+
+
+
+
+
+# ========== Example2.com ============
+
+["example2.com"]
+    default_unit = "piece"
+    modifiers = [
+        "small",
+        "a bit",
+        "fresh",
+    ]
+
+["example2.com".amounts]
+    "½" = 0.5
+    "¼" = 0.25
+    "⅛" = 0.125
+
+["example2.com".units]
+    tsp.name = "tea spoon"
+
+    tbsp.name = "tea spoon"
+    tbsp.factor = 3
+
+    ml.name = "liter"
+    ml.factor = 0.001
+
+["example2.com".products]
+    apple.name = "apples"
+    banana.name = "bananas"
+
+    berries.unit = "package"
+    berries.factor = 50
+
+["example2.com".disambiguate]
+    Tomatoes.Can = "Tomatoes"
+    Tomatoes.Piece = "Fresh tomatoes"
