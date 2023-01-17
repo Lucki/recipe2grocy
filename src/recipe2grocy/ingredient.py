@@ -272,7 +272,3 @@ class Ingredient():
             print(f"Unit: '{self.__unit}'")
             print(f"Product: {self.__name}")
             print(f"Note: '{self.__note}'")
-
-# TODO: Convert product dependent on unit
-# 3 Cans    Tomatoes
-# 3         Tomatoes

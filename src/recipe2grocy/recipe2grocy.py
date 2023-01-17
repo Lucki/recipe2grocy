@@ -1,7 +1,9 @@
 import argparse
+import os
 import pygrocy
 import tomlkit
 import sys
+from appdirs import *
 from recipe_scrapers import scrape_me
 from recipe_scrapers import scrape_html
 from texttable import Texttable
@@ -67,7 +69,10 @@ except AttributeError as e:
     print(f"Error: {e}")
     sys.exit(1)
 
-with open("conversions.toml", "r") as file:
+appname = "Recipe2Grocy"
+config_dir = user_config_dir(appname)
+
+with open(os.path.join(config_dir, "conversions.toml"), "r") as file:
     config = tomlkit.parse(file.read())
 
 grocy = pygrocy.Grocy(

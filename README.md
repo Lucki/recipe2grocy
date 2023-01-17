@@ -1,19 +1,31 @@
 # Recipe2Grocy
 
-Moves scraped recipes into Grocy.
+PoC of moving scraped recipes into Grocy.
+
+## Usage
 
 ```
-usage: recipe2grocy.py [-h] --url URL [--input [FILE]] [--debug] [--no-confirm]
+usage: recipe2grocy [-h] --url URL [--input FILE] [--debug] [--no-confirm]
 
 Convert and insert recipes into Grocy.
 
 options:
   -h, --help      show this help message and exit
   --url URL       The URL to scrape or the URL where the html file (--input) originated from.
-  --input [FILE]  FILE containing the HTML
+  --input FILE    FILE containing the HTML
   --debug         Print additional debug information
   --no-confirm    Don't ask for confirmation before adding the recipe
 ```
+
+### Examples
+```
+recipe2grocy --url https://example.com/my-awesome-recipes/1754
+```
+
+```
+recipe2grocy --url https://example.com/ --input "/path/to/file.html"
+```
+
 ## Setup
 ### Build
 ```
@@ -36,13 +48,23 @@ python -m installer dist/*.whl
 * [recipe-scrapers](https://github.com/hhursev/recipe-scrapers) (If scraping a recipe doesn't work then you have to raise an issue there.)
 * [texttable](https://github.com/foutaise/texttable/)
 * [tomlkit](https://github.com/sdispater/tomlkit)
+* [appdirs](https://github.com/ActiveState/appdirs)
 
 ## Config
 
 Most of the magic happens in the configuration file.
 The script needs at least to know the names of units and potential modifiers.
 
-The config follows the [TOML](https://toml.io/en/latest) specification and is currently hardcoded to `conversions.toml` in the script directory.
+The config follows the [TOML](https://toml.io/en/latest) specification and will be searched in the users config directory:
+* Linux
+
+  `$XDG_CONFIG_HOME/Recipe2Grocy/conversions.toml`
+* Mac
+
+  `/Users/…/Library/Application Support/Recipe2Grocy/conversions.toml`
+* Windows 7
+
+  `C:\\Users\…\AppData\Local\Recipe2Grocy\Recipe2Grocy\conversions.toml`
 
 ### General overview
 
