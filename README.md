@@ -18,12 +18,12 @@ options:
 ```
 
 ### Examples
-```
-recipe2grocy --url https://example.com/my-awesome-recipes/1754
+``` sh
+python -m recipe2grocy --url https://example.com/my-awesome-recipes/1754
 ```
 
-```
-recipe2grocy --url https://example.com/ --input "/path/to/file.html"
+``` sh
+python -m recipe2grocy --url https://example.com/ --input "/path/to/file/containing.html"
 ```
 
 ## Setup
@@ -38,17 +38,17 @@ python -m build --wheel
 * [wheel](https://github.com/pypa/wheel)
 
 ### Install
-```
-python -m installer dist/*.whl
+``` sh
+python -m installer "dist/recipe2grocy-$VERSION-py3-none-any.whl"
 ```
 
 #### Dependencies
 * python >= 3
+* [appdirs](https://github.com/ActiveState/appdirs)
 * [pygrocy](https://github.com/SebRut/pygrocy)
 * [recipe-scrapers](https://github.com/hhursev/recipe-scrapers) (If scraping a recipe doesn't work then you have to raise an issue there.)
 * [texttable](https://github.com/foutaise/texttable/)
 * [tomlkit](https://github.com/sdispater/tomlkit)
-* [appdirs](https://github.com/ActiveState/appdirs)
 
 ## Config
 
@@ -64,7 +64,7 @@ The config follows the [TOML](https://toml.io/en/latest) specification and will 
   `/Users/…/Library/Application Support/Recipe2Grocy/conversions.toml`
 * Windows 7
 
-  `C:\\Users\…\AppData\Local\Recipe2Grocy\Recipe2Grocy\conversions.toml`
+  `%LocalAppData%\Recipe2Grocy\Recipe2Grocy\conversions.toml`
 
 ### General overview
 
